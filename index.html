@@ -21,7 +21,7 @@
             padding: 3rem;
             min-height: 100vh;
         }
-        
+
         /* grid background overlay */
         body::before{
             content: '';
@@ -59,10 +59,35 @@
 
 <body>
     <main>
-        <header class="header">
+        <section class="header">
             <h1>Clair Wang</h1>
             <p>High school sophomore passionate about math, <br> computer science, physics, and music.</p>
-        </header>
+        </section>
+
+        <section class = "projects-section">
+            <h2> Featured Projects</h2>
+
+            <!-- Add all projects here -->
+            <div class = "projects-container" id = "projects-container">
+                <div class = "project-card">
+                    <h3>Simple Todo List</h3>
+                    <p>This was my first html project that I made in August, 2025. I used this project as a way to apply basic html concepts I learned.</p>
+                    <a href = "#" class = "project-link"> View Repository 
+                    </a>
+                </div>
+            </div>
+
+            <div class = "project-nav">
+                <button id = "scroll-left"> < </button>
+                <button id = "scroll-right"> > </button>
+            </div>
+
+        </section>
+
+        <!-- Button that leads to Projects -->
+        <section class = "projects-page-link">
+            <a href = "projects.html" target = "_blank"> View All Projects </a>
+        </section>
     </main>
 </body>
 
