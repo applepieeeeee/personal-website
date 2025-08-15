@@ -47,7 +47,9 @@
             bottom: 0;
             z-index: -1;
             width: 100%;
-            height: 260%;  
+
+            /* The height is set to 250% to ensure the grid background covers the entire page, including when the content is scrolled. */
+            height: 250%;  
             background-image: repeating-linear-gradient(0deg, var(--grid-color), rgba(0, 0, 0, 0) 1px, transparent 1px, transparent 20px),
                               repeating-linear-gradient(90deg, var(--grid-color), rgba(0, 0, 0, 0) 1px, transparent 1px, transparent 20px);
             opacity: 0.7;
@@ -67,7 +69,7 @@
 
         .header h1 {
             font-family: "Ballet", cursive;
-            font-size: clamp(4rem, 12vw, 10rem);
+            font-size: clamp(6rem, 15vw, 12rem);
             font-weight: 600;
             line-height: 0.9;
             margin-bottom: 1.5rem;
@@ -78,19 +80,21 @@
 
         .header p {
             font-family: 'Source Code Pro', monospace;
-            font-size: clamp(1.4em, 2vw, 1rem);
+            font-size: clamp(1.5em, 3vw, 1.2rem);
             color: var(--text-color);
             line-height: 1.1;
-            max-width: 510px;
+            max-width: 705px;
             margin: 0;
             text-align: left;
-            margin-top: -1.3rem;
+            margin-top: -1.2rem;
         }
 
         .header p span {
             color: var(--secondary-accent);
             font-weight: bold;
         }
+
+
 
         /* projects section styling */
 
@@ -105,6 +109,7 @@
         /* changes project section title */
         .projects-section h2 {
             font-family: 'Ballet', cursive;
+            letter-spacing: 0.2rem;
             font-size: 5.5rem;
             margin-bottom: 0rem;
             color: var(--text-color);
@@ -127,6 +132,7 @@
         .projects-container::-webkit-scrollbar {
             display: none; /* Hide scrollbar for webkit browsers */
         }
+
 
         /* project card styling on main page*/
         .project-card{
