@@ -244,6 +244,55 @@
             box-shadow: 8px 8px 0 black;
         }
 
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            .header {
+                padding: 3rem 0.5rem;
+                min-height: auto;
+            }
+            .header h1 {
+                font-size: clamp(3rem, 15vw, 6rem);
+                letter-spacing: 0.15rem;
+            }
+            .header p {
+                font-size: clamp(0.85rem, 3vw, 1rem);
+                padding: 0.8rem 1rem;
+            }
+            .projects-section {
+                padding: 2rem 0.5rem;
+                margin: 1rem auto;
+            }
+            .projects-section h2 {
+                font-size: clamp(1.8rem, 6vw, 2.5rem);
+                margin-bottom: 1.5rem;
+            }
+            .project-card {
+                flex: 0 0 90vw;
+                max-width: 350px;
+                padding: 1.2rem;
+            }
+            .projects-container {
+                padding: 1rem 0;
+                gap: 1.5rem;
+                margin: 0; 
+            }
+            .project-nav button {
+                padding: 0.5rem 1rem;
+                font-size: 1.5rem;
+            }
+            .buttons-page-link {
+                margin: 3rem 0;
+            }
+            .buttons-page-link a {
+                padding: 1rem 1.8rem;
+                font-size: 1rem;
+            }
+        }
+
+
+
     </style>
 </head>
 
