@@ -89,5 +89,45 @@
             <a href = "projects.html" target = "_blank"> View All Projects </a>
         </section>
     </main>
+
+    <script>
+        const projectsContainer = document.getElementById('projects-container');
+        const scrollLeftBtn = document.getElementById('scroll-left');
+        const scrollRightBtn = document.getElementById('scroll-right');
+
+        const scrollAmt = 300;
+
+        scrollLeftBtn.addEventListener('click', () => {
+            projectsContainer.scrollBy({ left: -scrollAmt, behavior: 'smooth' });
+        });
+
+        scrollRightBtn.addEventListener('click', () => {
+            projectsContainer.scrollBy({ left: scrollAmt, behavior: 'smooth' });
+        });
+
+        const projectCards = document.querySelectorAll('.project-card');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.2
+        }
+
+        const projectViewer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                } else {
+                    entry.target.classList.remove('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, viewer);
+
+        projectCards.forEach(card => {
+            projectViewer.observe(card);
+        });
+
+    </script>
 </body>
 
