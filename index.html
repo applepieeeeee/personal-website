@@ -3,24 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clair Wang</title>
+    <title>first last</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ballet&family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:wght@400&display=swap" rel="stylesheet">
 
     <style>
-
         /* initializing variables */
         :root{
             --bg-color: #ece2d6;
             --text-color: #3a200e;
             --grid-color: rgba(0, 0, 0, 0.425);
             --accent-color: #a88c72;
-            --secondary-accent: #96918c;
+            --secondary-accent: #c7b8a7;
             --border-radius: 20px;
             --transition-speed: 0.6s;
         }
 
         *, *::before, *::after {
             box-sizing: border-box;
-
             margin: 0;
             padding: 0;
         }
@@ -45,10 +48,8 @@
             z-index: -1;
             width: 100%;
             height: 100%;  
-
             background-image: repeating-linear-gradient(0deg, var(--grid-color), rgba(0, 0, 0, 0) 1px, transparent 1px, transparent 25px),
                               repeating-linear-gradient(90deg, var(--grid-color), rgba(0, 0, 0, 0) 1px, transparent 1px, transparent 25px);
-            
             opacity: 0.7;
             background-size: 25px 25px;
             pointer-events: none;
@@ -61,31 +62,29 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-
             min-height: calc(100vh - 4rem);
         }
 
-        /* Todo: change this font to: https://fonts.google.com/specimen/Ballet?categoryFilters=Feeling:%2FExpressive%2FFancy */
         .header h1 {
-            font-family: "Playfair Display", serif;
+            font-family: "Ballet", cursive;
             font-size: clamp(4rem, 12vw, 10rem);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0rem;
+            font-weight: 600;
             line-height: 0.9;
             margin-bottom: 1.5rem;
             color: var(--text-color);
-            text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.199);
-            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
+            text-shadow: 4px 4px 0 var(--accent-color);
+            -webkit-text-fill-color: var(--text-color);
         }
 
         .header p {
             font-family: 'Source Code Pro', monospace;
             font-size: clamp(1.4em, 2vw, 1rem);
             color: var(--text-color);
-            line-height: 1.5;
-            max-width: 700px;
-            margin: 0 auto;
+            line-height: 1.1;
+            max-width: 705px;
+            margin: 0;
+            text-align: left;
+            margin-top: -1.6rem;
         }
 
         .header p span {
@@ -97,7 +96,6 @@
         .projects-section {
             padding: 4rem 1rem;
             text-align: center;
-
             background-color: rgba(255,255,255,0.7);
             border-radius: var(--border-radius);
         }
@@ -118,7 +116,6 @@
             overflow-x: scroll;
             -webkit-overflow-scrolling: touch; /* so ios also works */
             scroll-behavior: smooth;
-            
             padding: 1.5rem;
             gap: 2.5rem;
             justify-content: flex-start;
@@ -132,27 +129,24 @@
         /* project card styling on main page*/
         .project-card{
             flex: 0 0 320px;
-            background-color: #d3baa3;
+            background-color: var(--accent-color);
             border: 3px solid var(--text-color);
             border-radius: var(--border-radius);
             padding: 2rem;
             box-shadow: 6px 6px 0 var(--secondary-accent);
-            
             text-align: left;
-            transform: translateX(100%);
             flex-shrink: 0;
+            transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
         }
-
-     
-
+        
         .project-card:hover {
             transform: translateY(-8px) rotate(-2deg); 
             box-shadow: 8px 8px 0 var(--accent-color); 
         }
 
         .project-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
+            font-family: 'Ballet', cursive;
+            font-size: 2rem;
             margin-bottom: 0.75rem;
             color: var(--text-color);
             border-bottom: 2px dashed var(--accent-color); 
@@ -167,22 +161,24 @@
             margin-bottom: 1rem;
         }
 
-        .project-card.project-link{
+        .project-link{
             display: inline-block;
             text-decoration: none;
             margin-top: 1rem;
             font-family: 'Source Code Pro', monospace;
-            color: var(--accent-color);
+            color: var(--text-color);
             padding: 0.6rem 1.2rem;
             border-radius: 5px;
             transition: background-color 0.3s, color 0.3s, transform 0.2s;
+            border: 2px solid var(--text-color);
+            box-shadow: 3px 3px 0 var(--secondary-accent);
         }
 
-        .project-card.project-link:hover{
-            background-color: var(--accent-color);
-            color: white;
+        .project-link:hover{
+            background-color: var(--secondary-accent);
+            color: var(--bg-color);
             transform: translateY(-2px);
-            box-shadow: 5px 5px 0 var(--accent-color);
+            box-shadow: 5px 5px 0 var(--text-color);
         }
 
         /* navigation buttons */
@@ -198,19 +194,18 @@
             border: 3px solid var(--text-color);
             color: var(--text-color);
             font-size: 2rem;
-
             padding: 0.75rem 1.5rem;
             border-radius: var(--border-radius);
             transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
-
             box-shadow: 4px 4px 0 var(--text-color);
             outline: none;
         }
 
         .project-nav button:hover{
-            background-color: #e0d4c5;
-            color: var(--text-color);
+            background-color: var(--secondary-accent);
+            color: var(--bg-color);
             transform: translateY(-4px);
+            box-shadow: 6px 6px 0 var(--accent-color);
             outline: none;
         }
 
@@ -226,6 +221,13 @@
         }
 
         /* link to projects page */
+        .projects-page-link {
+            display: block;
+            text-align: center;
+            margin: 5rem 0 3rem 0;
+            font-family: 'Source Code Pro', monospace;
+        }
+        
         .projects-page-link a {
             text-decoration: none;
             color: var(--text-color);
@@ -233,15 +235,16 @@
             padding: 1.2rem 2.5rem; 
             border-radius: var(--border-radius);
             transition: background-color 0.3s, color 0.3s, transform 0.2s;
-            box-shadow: 6px 6px 0 black;
+            box-shadow: 6px 6px 0 var(--secondary-accent);
             font-size: 1.1rem;
             letter-spacing: 0.05rem;
         }
 
         .projects-page-link a:hover {
-            background-color: var(--accent-color);
+            background-color: var(--secondary-accent);
             transform: translateY(-4px);
-            box-shadow: 8px 8px 0 black;
+            box-shadow: 8px 8px 0 var(--accent-color);
+            color: var(--bg-color);
         }
 
         @media (max-width: 768px) {
@@ -254,7 +257,6 @@
             }
             .header h1 {
                 font-size: clamp(3rem, 15vw, 6rem);
-                letter-spacing: 0.15rem;
             }
             .header p {
                 font-size: clamp(0.85rem, 3vw, 1rem);
@@ -290,9 +292,6 @@
                 font-size: 1rem;
             }
         }
-
-
-
     </style>
 </head>
 
@@ -300,19 +299,17 @@
     <main>
         <section class="header">
             <h1>Clair Wang</h1>
-            <p>High school sophomore passionate about math, <br> computer science, physics, and music.</p>
+            <p>High school sophomore passionate about math, computer science, physics, and music.</p>
         </section>
 
         <section class = "projects-section">
             <h2> Featured Projects</h2>
 
-            <!-- Add all projects here -->
             <div class = "projects-container" id = "projects-container">
                 <div class = "project-card">
                     <h3>Simple Todo List</h3>
                     <p>This was my first html project that I made in August, 2025. I used this project as a way to apply basic html concepts I learned.</p>
-                    <a href = "#" class = "project-link"> View Repository 
-                    </a>
+                    <a href = "#" class = "project-link"> View Repository </a>
                 </div>
             </div>
 
@@ -323,7 +320,6 @@
 
         </section>
 
-        <!-- Button that leads to Projects -->
         <section class = "projects-page-link">
             <a href = "projects.html" target = "_blank"> View All Projects </a>
         </section>
@@ -343,30 +339,6 @@
         scrollRightBtn.addEventListener('click', () => {
             projectsContainer.scrollBy({ left: scrollAmt, behavior: 'smooth' });
         });
-
-        const projectCards = document.querySelectorAll('.project-card');
-
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.2
-        }
-
-        const projectViewer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                } else {
-                    entry.target.classList.remove('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, viewer);
-
-        projectCards.forEach(card => {
-            projectViewer.observe(card);
-        });
-
     </script>
 </body>
-
+</html>
