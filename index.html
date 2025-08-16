@@ -83,7 +83,7 @@
             font-size: clamp(1.5em, 3vw, 1.2rem);
             color: var(--text-color);
             line-height: 1.1;
-            max-width: 705px;
+            max-width: 700px;
             margin: 0;
             text-align: left;
             margin-top: -1.2rem;
@@ -93,8 +93,6 @@
             color: var(--secondary-accent);
             font-weight: bold;
         }
-
-
 
         /* projects section styling */
 
@@ -117,25 +115,33 @@
             display: inline-block;
         }
 
-        .projects-container{
+        /* New wrapper for the container and buttons */
+        .projects-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 2rem 0;
+            min-height: 500px;
+        }
+
+        .projects-container {
             display: flex;
             flex-wrap: nowrap;
             overflow-x: scroll;
-            -webkit-overflow-scrolling: touch; /* so ios also works */
+            -webkit-overflow-scrolling: touch;
             scroll-behavior: smooth;
-            padding: 4rem;
-            gap: 2.5rem;
+            padding: 0 2rem;
+            gap: 3rem;
             justify-content: flex-start;
-            margin: 0 -1rem;
+            flex-grow: 1; 
         }
 
         .projects-container::-webkit-scrollbar {
             display: none; /* Hide scrollbar for webkit browsers */
         }
 
-
         /* project card styling on main page*/
-        .project-card{
+        .project-card {
             flex: 0 0 340px;
             background-color: var(--accent-color);
             border: 3px solid var(--text-color);
@@ -146,10 +152,12 @@
             flex-shrink: 0;
             transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
         }
-        
+
         .project-card:hover {
-            transform: translateY(-8px) rotate(-2deg); 
-            box-shadow: 8px 8px 0 var(--accent-color); 
+            transform: translateY(-8px) rotate(-2deg);
+            box-shadow: 8px 8px 0 var(--accent-color);
+            position: relative;
+            z-index: 100;
         }
 
         .project-card h3 {
@@ -157,7 +165,7 @@
             font-size: 1.7rem;
             margin-bottom: 1rem;
             color: var(--text-color);
-            border-bottom: 2px dashed var(--accent-color); 
+            border-bottom: 2px dashed var(--accent-color);
             padding-bottom: 1rem;
         }
 
@@ -169,7 +177,7 @@
             margin-bottom: 1rem;
         }
 
-        .project-link{
+        .project-link {
             display: inline-block;
             text-decoration: none;
             margin-top: 1rem;
@@ -182,7 +190,7 @@
             box-shadow: 3px 3px 0 var(--secondary-accent);
         }
 
-        .project-link:hover{
+        .project-link:hover {
             background-color: var(--secondary-accent);
             color: var(--bg-color);
             transform: translateY(-2px);
@@ -190,25 +198,19 @@
         }
 
         /* navigation buttons */
-        .project-nav {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            margin-top: 3rem;
-        }
-
-        .project-nav button {
+        .projects-wrapper button {
             border: 2px solid var(--text-color);
             color: var(--text-color);
             font-size: 2rem;
-            padding: 0.75rem 1.5rem;
+            padding: 1rem 1.5rem;
             border-radius: var(--border-radius);
             transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
             box-shadow: 4px 4px 0 var(--text-color);
             outline: none;
+            cursor: pointer;
         }
 
-        .project-nav button:hover{
+        .projects-wrapper button:hover {
             background-color: var(--secondary-accent);
             color: var(--bg-color);
             transform: translateY(-4px);
@@ -216,7 +218,7 @@
             outline: none;
         }
 
-        .project-nav button:active{
+        .projects-wrapper button:active {
             transform: translateY(0);
             box-shadow: 2px 2px 0 var(--text-color);
         }
@@ -308,28 +310,37 @@
             <p>High school sophomore from Boston, MA, passionate about math, computer science, physics, and music.</p>
         </section>
 
-        <section class = "projects-section">
+        <section class="projects-section">
             <h2> Featured Projects</h2>
-
-            <div class = "projects-container" id = "projects-container">
-                <div class = "project-card">
-                    <h3>Simple Todo List</h3>
-                    <p>This was my first html project that I made in August, 2025. I used this project as a way to apply basic html concepts I learned.</p>
-                    <a href = "https://github.com/applepieeeeee/todolist" target="_blank" class = "project-link"> View Repository </a>
-                    <a href = "https://applepieeeeee.github.io/todolist/" target="_blank" class = "project-link"> View Demo </a>
-
+    
+            <div class="projects-wrapper">
+                <button id="scroll-left"> < </button>
+                <div class="projects-container" id="projects-container">
+                    <div class="project-card">
+                        <h3>Simple Todo List</h3>
+                        <p>paragraph text</p>
+                        <a href="link" target="_blank" class="project-link"> View Repository </a>
+                        <a href="link" target="_blank" class="project-link"> View Demo </a>
+                    </div>
+                    <div class="project-card">
+                        <h3>Personal Website</h3>
+                        <p>This is my personal website, which I built mainly using HTML. It showcases my projects, hobbies, and honors.</p>
+                        <a href="link" target="_blank" class="project-link"> View Repository </a>
+                        <a href="link" target="_blank" class="project-link"> Demo is this site! </a>
+                    </div>
+                    <div class="project-card">
+                        <h3>title</h3>
+                        <p>paragraph</p>
+                        <a href="link"> View Repository </a>
+                        <a href="link"> View Demo </a>
+                    </div>
                 </div>
+                <button id="scroll-right"> > </button>
             </div>
-
-            <div class = "project-nav">
-                <button id = "scroll-left"> < </button>
-                <button id = "scroll-right"> > </button>
-            </div>
-
         </section>
 
-        <section class = "projects-page-link">
-            <a href = "projects.html" target = "_blank"> View All Projects </a>
+        <section class="projects-page-link">
+            <a href="projects.html" target="_blank"> View All Projects </a>
         </section>
     </main>
 
