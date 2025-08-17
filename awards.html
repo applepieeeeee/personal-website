@@ -185,6 +185,177 @@
                 width: 50%;
             }
 
+            .timeline-item-content{
+                background-color: var(--card-bg-color);
+                border: 2px solid var(--text-color);
+                box-shadow: 6px 6px 0 var(--secondary-accent);
+                border-radius: var(--border-radius);
+
+                padding: 1.5rem 2rem;
+                position: relative;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                margin: 0;
+                min-height: 120px;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+
+            .timeline-item-content:hover{
+                transform: translateY(-5px) rotate(-2deg);
+                box-shadow: 8px 8px 0 var(--accent-color);
+            }
+
+            .timeline-item::after{
+                content: '';
+                position: absolute;
+                width: 25px;
+                height: 25px;
+
+                border-radius: 50%;
+                top: 50%;
+                
+                background-color: var(--accent-color);
+                border: 4px solid var(--text-color);
+
+                transform: translateY(-50%);
+                z-index: 1;
+            }
+
+            .timeline-item:nth-child(odd){
+                left: 0;
+                padding-right: 40px;
+            }
+
+            .timeline-item:nth-child(odd)::after{
+                right:-12.5px
+            }
+
+            .timeline-item:nth-child(odd).timeline-item-content{
+                margin-left: auto;
+                text-align: right;
+            }
+
+
+            .timeline-item:nth-child(even)::after{
+                left: -12.5px;
+            }
+
+            .timeline-item-date{
+                font-family: 'Source Code Pro', monospace;
+                font-size: 1.1em;
+                font-weight: 800;
+                color: var(--secondary-accent);
+                margin-bottom: 0.5rem;
+                display: block;
+            }
+
+            .timeline-item h3{
+                font-family: 'Source Code Pro', monospace;
+                font-size: 1.6em;
+                color: var(--text-color);
+                margin-bottom: 0.5rem;
+            }
+
+            .timeline-item p{
+                font-family: 'Google Sans Code', monospace;
+                font-size: 1em;
+                color: var(--text-color);
+                line-height: 1.2;
+            }
+
+            @media (max-width: 768px){
+                body{
+                    padding: 1rem;
+                }
+
+                .navbar{
+                    flex-direction: column;
+                    padding: 1rem;
+                    margin-bottom: 2rem;
+                }
+
+                .navbar-logo{
+                    font-size: 2rem;
+                    margin-bottom: 1rem;
+                }
+
+                .navbar-links{
+                    flex-direction: column;
+                    gap: 0.5rem;
+                    width: 100%;
+                    text-align: center;
+                }
+
+                .navbar-links a{
+                    padding: 0.5rem;
+                    width: 100%;
+                }
+
+                .header {
+                    padding: 3rem 0.5rem;
+                    min-height: auto;
+                }
+
+                .header h1{
+                    font-size: clamp(3rem, 15vw, 6rem);
+                }
+
+                .timeline::before {
+
+                    left: 20px;
+                }
+
+                .timeline-item {
+                    width: 100%;
+                    padding-left: 60px;
+                    padding-right: 10px;
+                }
+
+                .timeline-item::after{
+                    left: 8px;
+                    top: 15px;
+                    transform: translateY(0);
+                }
+
+                .timeline-item:nth-child(odd){
+                    left: 0;
+                    padding-right: 10px;
+                }
+
+                .timeline-item:nth-child(odd)::after{
+                    right: auto;
+                    left:8px;
+                }
+
+                .timeline-item:nth-child(odd).timeline-item-content{
+                    margin-left:0;
+                    text-align:left;
+                }
+
+
+                .timeline-item:nth-child(even){
+                    left:0;
+                    padding-left: 60px;
+                }
+
+                .timeline-item:nth-child(even)::after{
+                    left:8px;
+                }
+
+                .timeline-item:nth-child(even).timeline-item-content{
+                    margin-right:0;
+                    text-align:left;
+                }
+
+                .timeline-item-date{
+                    text-align:left;
+                }
+            }
+
+
         </style>
     </head>
 
@@ -201,7 +372,7 @@
 
         <section class="header">
             <h1>Awards & Honors</h1>
-            
         </section>
+
     </body>
 </html>
