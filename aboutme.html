@@ -53,7 +53,6 @@
             z-index: -1;
             width: 100%;
 
-            /* The height is set to 170% to ensure the grid background covers the entire page, including when the content is scrolled. */
             height: 170%;  
             background-image: repeating-linear-gradient(0deg, var(--grid-color), rgba(0, 0, 0, 0) 1px, transparent 1px, transparent 20px),
                               repeating-linear-gradient(90deg, var(--grid-color), rgba(0, 0, 0, 0) 1px, transparent 1px, transparent 20px);
@@ -132,8 +131,6 @@
             font-size: clamp(5rem, 9vw, 9rem);
             font-weight: 600;
 
-            text-align: center;
-
             line-height: 0.9;
             margin-bottom: 1.5rem;
 
@@ -145,11 +142,11 @@
         .header p {
             font-family: 'Source Code Pro', monospace;
             font-size: clamp(1.3em, 2vw, 1rem);
-            font-weight: 400;
+            font-weight: 500;
             color: var(--text-color);
-            line-height: 1.1;
+            line-height: 1.7;
 
-            max-width: 800px;
+            max-width: 900px;
             margin: 0;
 
             text-align: left;
@@ -182,7 +179,15 @@
 
     <section class="header">
         <h1>About Me</h1>
+        <p>
+            Hello! My name is Clair Wang, a high school Sophomore studying at Boston University Academy in Massachusetts.
+            I am passionate about computer science (competitive coding and web development), mathematics, and physics.
+            This website serves as my portfolio, showcasing various projects I've 
+            worked on throughout my high school career and awards I've received. When I'm not coding,
+            you can find me playing the piano, reading, or spending time with my friends.
+        </p>
     </section>
+
 </body>
 
 </html>
