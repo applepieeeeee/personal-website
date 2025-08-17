@@ -58,8 +58,8 @@
             z-index: -1;
             width: 100%;
 
-            /* The height is set to 250% to ensure the grid background covers the entire page, including when the content is scrolled. */
-            height: 250%;  
+            /* The height is set to 260% to ensure the grid background covers the entire page, including when the content is scrolled. */
+            height: 260%;  
             background-image: repeating-linear-gradient(0deg, var(--grid-color), rgba(0, 0, 0, 0) 1px, transparent 1px, transparent 20px),
                               repeating-linear-gradient(90deg, var(--grid-color), rgba(0, 0, 0, 0) 1px, transparent 1px, transparent 20px);
             opacity: 0.7;
@@ -67,7 +67,58 @@
             pointer-events: none;
         }
 
-         .header{
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 1rem 2rem;
+
+            background-color: var(--accent-color);
+
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
+            border: 2px solid var(--text-color);
+            box-shadow: 6px 6px 0 var(--secondary-accent);
+        }
+
+        .navbar-logo{
+            font-family: "Ballet", cursive;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--bg-color);
+
+            text-decoration: none;
+            text-shadow: 2px 2px 0 var(--text-color);
+            flex-shrink: 0;
+            white-space: nowrap;
+        }
+
+        .navbar-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .navbar-links a{
+            font-family: 'Google Sans Code', monospace;
+            color: var(--bg-color);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 700;
+            
+            padding: 0.5rem 1rem;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .navbar-links a:hover {
+            background-color: var(--secondary-accent);
+            color: var(--text-color);
+        }
+
+        .header{
             text-align: center;
             padding: 13rem 0rem;
             display: flex;
@@ -257,6 +308,15 @@
 </head>
 
 <body>
+    <nav class = "navbar">
+        <a href = "index.html" class = "navbar-logo">Clair's Portfolio</a>
+        <ul class = "navbar-links">
+            <li><a href = "index.html">Homepage</a></li>
+            <li><a href = "projects.html">Projects</a></li>
+            <li><a href = "aboutme.html">About</a></li>
+        </ul>
+    </nav>
+
     <main>
         <section class="header">
             <h1>My Coding Projects </h1>

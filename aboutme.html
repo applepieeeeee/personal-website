@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang = "en"> 
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Clair Wang</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ballet&family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:wght@400&display=swap" rel="stylesheet">
+
+    <style>
+        :root{
+            --bg-color: #ece2d6;
+            --text-color: #3a200e;
+            --grid-color: rgba(0, 0, 0, 0.425);
+            --accent-color: #a88c72;
+            --secondary-accent: #c7b8a7;
+            --border-radius: 20px;
+            --transition-speed: 0.6s;
+
+            /* card colors */
+            --card-bg-color: rgba(255,255,255,0.7);
+            --card-border-color: rgba(0, 0, 0, 0.1);
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Google Sans Code', monospace;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            overflow-x: hidden;
+            padding: 3rem;
+            min-height: 100vh;
+        }
+
+
+        /* grid background overlay */
+        body::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            width: 100%;
+
+            /* The height is set to 260% to ensure the grid background covers the entire page, including when the content is scrolled. */
+            height: 260%;  
+            background-image: repeating-linear-gradient(0deg, var(--grid-color), rgba(0, 0, 0, 0) 1px, transparent 1px, transparent 20px),
+                              repeating-linear-gradient(90deg, var(--grid-color), rgba(0, 0, 0, 0) 1px, transparent 1px, transparent 20px);
+            opacity: 0.7;
+            background-size: 25px 25px;
+            pointer-events: none;
+        }
+
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 1rem 2rem;
+
+            background-color: var(--accent-color);
+
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
+            border: 2px solid var(--text-color);
+            box-shadow: 6px 6px 0 var(--secondary-accent);
+        }
+
+        .navbar-logo{
+            font-family: "Ballet", cursive;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--bg-color);
+
+            text-decoration: none;
+            text-shadow: 2px 2px 0 var(--text-color);
+            flex-shrink: 0;
+            white-space: nowrap;
+        }
+
+        .navbar-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .navbar-links a{
+            font-family: 'Google Sans Code', monospace;
+            color: var(--bg-color);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 700;
+            
+            padding: 0.5rem 1rem;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .navbar-links a:hover {
+            background-color: var(--secondary-accent);
+            color: var(--text-color);
+        }
+
+        .header{
+            text-align: center;
+            padding: 13rem 0rem;
+            display: flex;
+            flex-direction: column;
+
+            align-items: center;
+            min-height: calc(100vh - 4rem);
+            justify-content: center;
+        }
+
+        .header h1 {
+            font-family: "Ballet", cursive;
+            font-size: clamp(5rem, 10vw, 9rem);
+            font-weight: 600;
+
+            line-height: 0.9;
+            margin-bottom: 1.5rem;
+
+            color: var(--text-color);
+            text-shadow: 4px 4px 0 var(--accent-color);
+            -webkit-text-fill-color: var(--text-color);
+        }
+
+        .header p {
+            font-family: 'Source Code Pro', monospace;
+            font-size: clamp(1.3em, 2vw, 1rem);
+            font-weight: 400;
+            color: var(--text-color);
+            line-height: 1.1;
+
+            max-width: 800px;
+            margin: 0;
+
+            text-align: left;
+            margin-top: 2.8rem;
+            text-align: center;
+
+            flex-grow: 1;
+        }
+
+        .header p span {
+            color: var(--secondary-accent);
+            font-weight: bold;
+            flex-grow: 1;
+        }
+    </style>
+        
+
+    </style>
+</head>
+
+<body>
+    <nav class = "navbar">
+        <a href = "index.html" class = "navbar-logo">Clair's Portfolio</a>
+        <ul class = "navbar-links">
+            <li><a href = "index.html">Homepage</a></li>
+            <li><a href = "projects.html">Projects</a></li>
+            <li><a href = "aboutme.html">About</a></li>
+        </ul>
+    </nav>
+
+    <section class="header">
+        <h1>About Me</h1>
+    </section>
+</body>
+
+</html>
