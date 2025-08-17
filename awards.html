@@ -145,11 +145,46 @@
                 text-align: left;
                 margin-top: -1.2rem;
             }
-
+    
             .header p span {
                 color: var(--secondary-accent);
                 font-weight: bold;
             }
+
+            /* TIMELINE STYLING */
+            .timeline-section {
+                padding: 4rem 1rem 0;
+                max-width: 1000px;
+                margin: 0 auto;
+                position: relative;
+            }
+
+            .timeline {
+                position: relative;
+                width: 100%;
+            }
+
+            .timeline::before {
+                content: '';
+                position: absolute;
+                width: 4px;
+
+                left: 50%;
+                top: 0;
+                bottom: 0;
+                margin-left: -2px;
+
+                border-radius: 2px;
+
+                background-color: var(--accent-color);
+            }
+
+            .timeline-item{
+                padding: 10px 0;
+                position: relative;
+                width: 50%;
+            }
+
         </style>
     </head>
 
