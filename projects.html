@@ -69,7 +69,7 @@
 
          .header{
             text-align: center;
-            padding: 0rem 0rem;
+            padding: 13rem 0rem;
             display: flex;
             flex-direction: column;
 
@@ -104,11 +104,14 @@
             text-align: left;
             margin-top: 2.8rem;
             text-align: center;
+
+            flex-grow: 1;
         }
 
         .header p span {
             color: var(--secondary-accent);
             font-weight: bold;
+            flex-grow: 1;
         }
 
 
@@ -126,6 +129,7 @@
         }
 
         .project-card{
+            flex: 0 0 340px;
             background-color: var(--card-bg-color);
             border-radius: var(--border-radius);
             padding: 2.2rem;
@@ -137,29 +141,118 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+
+            will-change: transform;
+            height: 100%;
         }
 
         .project-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+            position: relative;
         }
 
         .project-card h3{
             font-family: 'Source Code Pro', monospace;
             font-size: 1.8em;
+
             color: var(--text-color);
             margin-bottom: 1rem;
+
             text-shadow: 1px 1px 0 var(--secondary-accent);
+            padding-bottom: 1rem;
         }
 
         .project-card p{
             font-family: 'Google Sans Code', monospace;
             font-size: 1.2em;
             color: var(--text-color);
+
             margin-bottom: 1.5rem;
             line-height: 1.5;
+            
             flex-grow: 1;
         }
+
+        .project-card img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            height: 200px;
+            object-fit: cover;
+            border: 1px solid var(--card-border-color);
+        }
+
+        .project-links {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .project-links a{
+            display: inline-flex;
+            align-items: center;
+            padding: 0.75rem 1.25rem;
+
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+            
+            border-radius: 10px;
+            font-size: 0.9em;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+
+            text-decoration: none;
+        }
+
+        .project-links a:hover{
+            background-color: #8c725c;
+            transform: translateY(-2px);
+            box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+        }
+
+        .project-links a:active{
+            transform: translateY(0);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        @media (max-width: 768px) {
+            .project-card {
+                padding: 1rem;
+            }
+
+            .header {
+                padding: 3rem 0.5rem;
+            }
+
+            .header h1 {
+                font-size: clamp(4rem, 12vw, 7rem);
+            }
+
+            .projects-section {
+                padding: 2rem 0.5rem;
+                margin: 1rem auto;
+            }
+
+            .projects-section h2 {
+                font-size: clamp(1.8rem, 6vw, 2.5rem);
+                margin-bottom: 1.5rem;
+            }
+
+            .project-grid{
+                grid-template-columns: 1fr;
+            }
+
+            .project-card {
+                flex: 0 0 95vw;
+                max-width: 400px;
+                padding: 1.2rem;
+            }
+
+        }
+
     </style>
 </head>
 
@@ -176,8 +269,32 @@
         <section class = "projects-section">
             <div class = "project-grid">
                 <div class = "project-card">
+                    <img src = "" alt = "404 Path Not Found: A CYOA Game Image">
                     <h3>404 Path Not Found: A CYOA Game</h3>
-                    <p>Project description goes here. This is a brief overview of the project.</p>
+
+                    <p> This was a project I made in the Girls Who Code Summer Immersion Program in 2025.
+                        This was one of the first projects I made using JavaScript and the p5.js library.
+                    </p>
+
+                    <div class = "project-links">
+                        <a href="https://github.com/applepieeeeee/404-path-not-found">GitHub Repo</a>
+                        <a href="https://applepieeeeee.github.io/404-path-not-found">Live Demo</a>
+                    </div>
+                </div>
+
+                <div class = "project-card">
+                    <img src = "" alt = "My Personal Website Image">
+                    <h3>My Personal Website</h3>
+
+                    <p>This is my personal website, which I built mainly using HTML. 
+                        It showcases my projects, hobbies, and honors. 
+                        I started building this website in August, 2025.
+                    </p>
+
+                    <div class = "project-links">
+                        <a href="https://github.com/applepieeeeee/personal-website">GitHub Repo</a>
+                        <a href="https://applepieeeeee.github.io/personal-website">Demo is this website!</a>
+                    </div>
                 </div>
             </div>
         </section>
