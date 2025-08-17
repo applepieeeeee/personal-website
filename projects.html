@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -11,7 +11,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Ballet&family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:wght@400&display=swap" rel="stylesheet">
 
+
+    <!-- /* css styling */  -->
     <style>
+
         /* initial variables */
         :root{
             --bg-color: #ece2d6;
@@ -21,7 +24,12 @@
             --secondary-accent: #c7b8a7;
             --border-radius: 20px;
             --transition-speed: 0.6s;
+
+            /* card colors */
+            --card-bg-color: rgba(255,255,255,0.7);
+            --card-border-color: rgba(0, 0, 0, 0.1);
         }
+
 
         *, *::before, *::after {
             box-sizing: border-box;
@@ -37,6 +45,7 @@
             padding: 3rem;
             min-height: 100vh;
         }
+
 
         /* grid background overlay */
         body::before{
@@ -60,20 +69,23 @@
 
          .header{
             text-align: center;
-            padding: 5rem 1rem;
+            padding: 0rem 0rem;
             display: flex;
             flex-direction: column;
+
             align-items: center;
-            justify-content: center;
             min-height: calc(100vh - 4rem);
+            justify-content: center;
         }
 
         .header h1 {
             font-family: "Ballet", cursive;
             font-size: clamp(5rem, 10vw, 9rem);
             font-weight: 600;
+
             line-height: 0.9;
             margin-bottom: 1.5rem;
+
             color: var(--text-color);
             text-shadow: 4px 4px 0 var(--accent-color);
             -webkit-text-fill-color: var(--text-color);
@@ -82,12 +94,15 @@
         .header p {
             font-family: 'Source Code Pro', monospace;
             font-size: clamp(1.3em, 2vw, 1rem);
+            font-weight: 400;
             color: var(--text-color);
             line-height: 1.1;
+
             max-width: 800px;
             margin: 0;
+
             text-align: left;
-            margin-top: 3rem;
+            margin-top: 2.8rem;
             text-align: center;
         }
 
@@ -96,21 +111,78 @@
             font-weight: bold;
         }
 
+
+        /* projects section */
+        .projects-section {
+            padding: 0rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .project-grid{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* so it is responsive. */
+            gap: 2rem;
+        }
+
+        .project-card{
+            background-color: var(--card-bg-color);
+            border-radius: var(--border-radius);
+            padding: 2.2rem;
+            border: 1px solid var(--card-border-color);
+
+            box-shadow: 0 10px 10px rgba(0,0,0,0.05);
+            transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+
+        .project-card h3{
+            font-family: 'Source Code Pro', monospace;
+            font-size: 1.8em;
+            color: var(--text-color);
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 0 var(--secondary-accent);
+        }
+
+        .project-card p{
+            font-family: 'Google Sans Code', monospace;
+            font-size: 1.2em;
+            color: var(--text-color);
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+            flex-grow: 1;
+        }
     </style>
 </head>
-
 
 <body>
     <main>
         <section class="header">
             <h1>My Coding Projects </h1>
-            <p>Here you will find all my coding projects accumulated since my Freshman year of high school (2025). 
+            <p>Here you will find all my coding projects accumulated since my Freshman year of high school. 
                 All projects are open source, so their respective GitHub repositories and GitHub pages links are provided.
             </p>
         </section>
 
-    </main>
+        <!-- add all project cards here -->
+        <section class = "projects-section">
+            <div class = "project-grid">
+                <div class = "project-card">
+                    <h3>404 Path Not Found: A CYOA Game</h3>
+                    <p>Project description goes here. This is a brief overview of the project.</p>
+                </div>
+            </div>
+        </section>
 
+    </main>
 </body>
 
 </html>
