@@ -168,7 +168,7 @@
 
         /* projects section */
         .projects-section {
-            padding: 0rem 1rem;
+            padding: 0rem 0rem;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -177,13 +177,14 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* so it is responsive. */
             gap: 2rem;
+            align-items: start;
         }
 
         .project-card{
             flex: 0 0 340px;
             background-color: var(--card-bg-color);
             border-radius: var(--border-radius);
-            padding: 2.2rem;
+            padding: 2rem;
             border: 1px solid var(--card-border-color);
 
             box-shadow: 0 10px 10px rgba(0,0,0,0.05);
@@ -194,7 +195,6 @@
             justify-content: space-between;
 
             will-change: transform;
-            height: 100%;
         }
 
         .project-card:hover {
@@ -216,7 +216,7 @@
 
         .project-card p{
             font-family: 'Google Sans Code', monospace;
-            font-size: 1.2em;
+            font-size: 1rem;
             color: var(--text-color);
 
             margin-bottom: 1.5rem;
@@ -329,11 +329,13 @@
         <section class = "projects-section">
             <div class = "project-grid">
                 <div class = "project-card">
-                    <img src = "" alt = "404 Path Not Found: A CYOA Game Image">
+                    <img src = "project_images/CYOAproject.png" alt = "404 Path Not Found: A CYOA Game Image">
                     <h3>404 Path Not Found: A CYOA Game</h3>
 
                     <p> This was a project I made in the Girls Who Code Summer Immersion Program in 2025.
-                        This was one of the first projects I made using JavaScript and the p5.js library.
+                        This was one of the first projects I made using JavaScript and the p5.js library. 
+                        This project is a Choose Your Own Adventure game where you play as a character who 
+                        has lost their way in the digital world. There are several paths you can take, each leading to different outcomes.
                     </p>
 
                     <div class = "project-links">
@@ -343,12 +345,12 @@
                 </div>
 
                 <div class = "project-card">
-                    <img src = "" alt = "My Personal Website Image">
+                    <img src = "project_images/personal_website.png" alt = "My Personal Website Image">
                     <h3>My Personal Website</h3>
 
-                    <p>This is my personal website, which I built mainly using HTML. 
-                        It showcases my projects, hobbies, and honors. 
-                        I started building this website in August, 2025.
+                    <p>This is my personal website, which I built mainly using HTML and CSS. It's a simple portfolio-style website
+                        that showcases my coding projects, skills, awards, and interests. I started building this website in 2025,
+                        and I am still actively updating it with new projects and information.
                     </p>
 
                     <div class = "project-links">
@@ -356,6 +358,22 @@
                         <a href="https://applepieeeeee.github.io/personal-website">Demo is this website!</a>
                     </div>
                 </div>
+
+                <div class = "project-card">
+                    <img src = "project_images/magic_8_ball.png" alt = "Magic 8 Ball Image">
+                    <h3>Magic 8 Ball</h3>
+
+                    <p>This is a Magic 8 Ball project I created using HTML, CSS, and JavaScript. It simulates the classic toy, 
+                        allowing users to ask a question and receive a random answer.
+                    </p>
+
+                    <div class = "project-links">
+                        <a href="https://github.com/applepieeeeee/8ball">GitHub Repo</a>
+                        <a href="https://applepieeeeee.github.io/8ball">Live Demo</a>
+                    </div>
+                </div>
+
+
             </div>
         </section>
 
