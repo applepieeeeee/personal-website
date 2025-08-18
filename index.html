@@ -261,6 +261,95 @@
             }
         }
 
+        /* popup */
+        .popup-modal{
+            display: none;
+            position: fixed;
+
+            z-index: 10000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+
+            overflow: auto;
+            background-color: rgba(0,0,0,0.7);
+
+            display: flex;
+            justify-content: center;
+            align-content: center;
+
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .popup-modal.show{
+            background-color: var(--bg-color);
+            
+            margin: auto;
+            padding: 2.5rem;
+            border-radius: var(--border-radius);
+            border: 3px solid var(--text-color);
+
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+
+            text-align: center;
+            transform: scale(0.9);
+
+            transition: transform 0.3s ease;
+        }
+
+        .popup-modal.show.popup-content{
+            transform: scale(1);
+        }
+
+        .popup-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            border: 2px solid var(--text-color);
+        }
+
+        .popup-content h3 {
+            font-family: 'Ballet', cursive;
+            font-size: 2.5rem;
+            color: var(--text-color);
+            margin-bottom: 1rem;
+        }
+
+        .popup-content p {
+            font-family: 'Source Code Pro', monospace;
+            font-size: 1rem;
+            color: var(--text-color);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+         .close-button {
+            color: var(--text-color);
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close-button:hover,
+        .close-button:focus {
+            color: var(--accent-color);
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+
         /* projects section styling */
 
         /* changes project cards */
@@ -588,19 +677,23 @@
 
             <div class = "bubble-container">
 
-                <div class = "bubble bubble-1">
+                <div class = "bubble bubble-1" data-image="https://placehold.co/150x150/8a4d4d/ffffff?text=Piano"
+                    data-title="Piano Playing" data-description="I have been playing the piano for over 10 years, and my favorite composer is Beethoven.">
                     <img src="bubbles/piano.png" alt="Piano Playing" />
                 </div>
 
-                <div class = "bubble bubble-2">
+                <div class = "bubble bubble-2" data-image="https://placehold.co/150x150/8a4d4d/ffffff?text=Art"
+                    data-title="Art" data-description="I enjoy creating digital art and traditional art, and experimenting with different styles.">
                     <img src = "bubbles/art.png" alt="Art" />
                 </div>
 
-                <div class = "bubble bubble-3">
+                <div class = "bubble bubble-3" data-image="https://placehold.co/150x150/8a4d4d/ffffff?text=Oboe"
+                    data-title="Oboe Playing" data-description="I have been playing the oboe for 2 years and love playing my favorite Studio Ghibli music.">
                     <img src = "bubbles/oboe.png" alt = "Oboe Playing" />
                 </div>
 
-                <div class = "bubble bubble-4">
+                <div class = "bubble bubble-4" data-image="https://placehold.co/150x150/8a4d4d/ffffff?text=Coding"
+                    data-title="Coding Projects" data-description="I love to spend my free time coding personal projects and learning new languages!">
                     <img src = "bubbles/coding.png" alt = "Coding" />
                 </div>
 
@@ -652,6 +745,16 @@
         </section>
     </main>
 
+    <div id = "popupModel" class = "popup-modal">
+        <div class="popup-content">
+            <span class="close-button">&times;</span>
+            <img id="popupImage" src="" alt="Hobby Image">
+            <h3 id="popupTitle"></h3>
+            <p id="popupDescription"></p>
+        </div>
+    </div>
+
+
     <script>
         const projectsContainer = document.getElementById('projects-container');
         const scrollLeftBtn = document.getElementById('scroll-left');
@@ -677,8 +780,7 @@
         projectsContainer.addEventListener('scroll', updateScrollButtons);
 
         window.addEventListener('load', updateScrollButtons);
-        window.addEventListener('resize', updateScrollButtons);
-
+        window.addEventListener('resize', updateScrollButtons); 
     </script>
 </body>
 </html>
