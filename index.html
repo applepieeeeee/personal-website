@@ -12,7 +12,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:wght@400&display=swap" rel="stylesheet">
 
     <style>
-
         /* initializing variables */
         :root{
             --bg-color: #ece2d6;
@@ -44,6 +43,7 @@
         body::before{
             content: '';
             position: absolute;
+
             top: 0;
             left: 0;
             right: 0;
@@ -51,7 +51,7 @@
             z-index: -1;
             width: 100%;
 
-            height: 280%;  
+            height: 245%;  
             background-image: repeating-linear-gradient(0deg, var(--grid-color), rgba(0, 0, 0, 0) 1px, transparent 1px, transparent 20px),
                               repeating-linear-gradient(90deg, var(--grid-color), rgba(0, 0, 0, 0) 1px, transparent 1px, transparent 20px);
             
@@ -116,11 +116,15 @@
         .header{
             text-align: center;
             padding: 5rem 1rem;
+
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
+
             min-height: calc(100vh - 4rem);
+
+            text-decoration: none;
         }
 
         .header h1 {
@@ -153,6 +157,80 @@
             font-weight: bold;
         }
 
+        /* floating bubbles */
+        .bubble-container{
+            position: absolute;
+
+            top: 50%;
+            left: 50%;
+            
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            max-width: 900px;
+            max-height: 600px;
+            
+            pointer-events: none;
+            z-index: 1;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .bubble{
+            position: absolute;
+
+            width: 100px;
+            height: 100px;
+            
+            border-radius: 50%;
+            overflow: hidden;
+
+            border: 3px solid var(--accent-color);
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+
+            transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+            pointer-events: auto;
+        }
+
+        .bubble:hover{
+            transform: scale(1.1);
+            box-shadow: 0 0 25px rgba(0,0,0,0.5);
+        }
+
+        .bubble img{
+            height: 100%;
+            width: 100%;
+
+            object-fit: cover;
+            display: block;
+        }
+
+        .bubble-1{
+            top: 10%;
+            left: 20%;
+            width: 80px;
+            height: 80px;
+
+            animation: floating 8s infinite alternate ease-in-out;
+            animation-delay: 0s;
+        }
+
+        @keyframes floating{
+            0%{
+                transform: translate(0,0) rotate(0deg);
+            } 25% {
+                transform: translate(10px, -10px) rotate(2deg);
+            } 50% {
+                transform: translate(0, 15px) rotate(-1deg);
+            } 75% {
+                transform: translate(-10px, 5px) rotate(3deg);
+            } 100% {
+                transform: translate(0,0) rotate (0deg);
+            }
+        }
+
         /* projects section styling */
 
         /* changes project cards */
@@ -173,10 +251,13 @@
             font-family: 'Ballet', cursive;
             letter-spacing: 0.2rem;
             font-size: 5.5rem;
+
             margin-bottom: 0rem;
             color: var(--text-color);
+
             position: relative;
             display: inline-block;
+
             font-weight: 600;
         }
 
@@ -387,6 +468,36 @@
                 max-width: 90%;
             }
 
+            .bubble-container{
+                position: relative;
+                width: 100%;
+                height: auto;
+
+                margin-top: 2rem;
+                display: flex;
+                flex-wrap: flex;
+                
+                gap: 1.5rem;
+                justify-content: center;
+                transform: none;
+            }
+
+            .bubble{
+                position: relative;
+                width: 70px;
+                height: 70px;
+
+                box-shadow: 0 0 10px rgba(0,0,0,0.2);
+
+                animation: none;
+            }
+
+            .bubble-1{
+                top: auto;
+                left: auto;
+                right: auto;
+            }
+
             .projects-section {
                 padding: 2rem 0.5rem;
                 margin: 1rem auto;
@@ -444,6 +555,12 @@
         <section class="header">
             <h1>Clair Wang</h1>
             <p>High school sophomore from Boston, MA, passionate about math, computer science, physics, and music.</p>
+
+            <div class = "bubble-container">
+                <div class = "bubble bubble-1">
+                    <img src="bubbles/piano.jpg" alt="Piano Playing" />
+                </div>
+            </div>
         </section>
 
         <section class="projects-section">
