@@ -20,6 +20,7 @@
                 --secondary-accent: #c7b8a7;
                 --border-radius: 20px;
                 --transition-speed: 0.6s;
+                
             }
 
 
@@ -49,10 +50,10 @@
                 z-index: -1;
                 width: 100%;
 
-                height: 280%;  
+                height: 320%;  
                 background-image: repeating-linear-gradient(0deg, var(--grid-color), rgba(0, 0, 0, 0) 1px, transparent 1px, transparent 20px),
                                 repeating-linear-gradient(90deg, var(--grid-color), rgba(0, 0, 0, 0) 1px, transparent 1px, transparent 20px);
-                
+        
                 opacity: 0.7;
                 background-size: 25px 25px;
                 pointer-events: none;
@@ -114,10 +115,12 @@
             .header{
                 text-align: center;
                 padding: 5rem 1rem;
+
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
+
                 min-height: calc(50vh - 4rem);
             }
 
@@ -133,7 +136,7 @@
                 text-shadow: 4px 4px 0 var(--accent-color);
                 -webkit-text-fill-color: var(--text-color);
             }
-
+    
             .header p {
                 font-family: 'Source Code Pro', monospace;
                 font-size: clamp(1.5em, 3vw, 1.2rem);
@@ -226,12 +229,12 @@
                 height: 25px;
 
                 border-radius: 50%;
-                top: 50%; /* Vertically center */
+                top: 50%; 
 
                 background-color: var(--accent-color);
                 border: 4px solid var(--text-color);
 
-                transform: translateY(-50%); /* Apply vertical centering */
+                transform: translateY(-50%); 
                 z-index: 1;
             }
 
@@ -426,14 +429,13 @@
             <div class = "timeline">
 
                 <!-- add more timeline elements here :)) -->
-                 <div class = "timeline-item">
+                <div class = "timeline-item">
                     <div class = "timeline-item-content">
-                        <span class = "timeline-item-date">January 2025</span>
-                        <h3>Scholastic Art and Writing Awards Gold Key and National Silver Medal</h3>
-                        <p>
-                            Won a Scholastic Gold Key for my Journalism piece on Lizzy Borden in the Massachusetts
-                            Regional. Won a National Silver Medal for the same piece.
-                        </p>
+                        <span class = "timeline-item-date">August 2025</span>
+                        <h3>Completed the Girls Who Code Summer Immersion Program</h3>
+                        <p>Gained experience in game development using Javascript and the p5.js library.</p>
+                        <img src = "awards/gwc.png" alt="Girls Who Code Certificate">
+                        <a href="https://hq.girlswhocode.com/verify/b36a62af-440e-4e37-b1c4-12a097533c0d" target="_blank" class="timeline-button">View Certificate</a>
                     </div>
                 </div>
 
@@ -446,16 +448,19 @@
                     </div>
                 </div>
 
-                <div class = "timeline-item">
+                 <div class = "timeline-item">
                     <div class = "timeline-item-content">
-                        <span class = "timeline-item-date">August 2025</span>
-                        <h3>Completed the Girls Who Code Summer Immersion Program</h3>
-                        <p>Gained experience in game development using Javascript and the p5.js library.</p>
-                        <img src = "awards/gwc.png" alt="Girls Who Code Certificate">
-                        <a href="https://hq.girlswhocode.com/verify/b36a62af-440e-4e37-b1c4-12a097533c0d" target="_blank" class="timeline-button">View Certificate</a>
+                        <span class = "timeline-item-date">January 2025</span>
+                        <h3>Scholastic Art and Writing Awards Gold Key and National Silver Medal</h3>
+                        <p>
+                            Won a Scholastic Gold Key for my Journalism piece on Lizzy Borden in the Massachusetts
+                            Regional. Won a National Silver Medal for the same piece.
+                        </p>
+                        <img src = "awards/scholastic.png" alt="Scholastic Art and Writing Awards Gold Key Certificate">
+                        <a href="https://docs.google.com/document/d/1CSelxfEkk0zNMorbM1qr1Wh6_3NmVn-cdYxcje3RIAY/edit?usp=sharing" target="_blank" class="timeline-button">View Essay</a>
                     </div>
                 </div>
-
+                
         </section>
     </body>
 </html>
