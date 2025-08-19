@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -133,7 +133,7 @@
 
         .header h1 {
             font-family: "Ballet", cursive;
-            font-size: clamp(6rem, 15vw, 12rem);
+            font-size: clamp(6rem, 14vw, 12rem);
             font-weight: 600;
             line-height: 0.9;
 
@@ -148,14 +148,15 @@
 
         .header p {
             font-family: 'Source Code Pro', monospace;
+          
             font-size: clamp(1.5em, 3vw, 1.2rem);
             color: var(--text-color);
 
             line-height: 1.1;
-            max-width: 700px;
+            max-width: 680px;
             margin: 0;
             text-align: left;
-            margin-top: -1.2rem;
+            margin-top: -1.1rem;
             position: relative;
             z-index: 2;
         }
@@ -424,7 +425,7 @@
         .projects-container::-webkit-scrollbar {
             display: none;
         }
-
+    
         .project-card {
             flex: 0 0 340px;
             background-color: var(--accent-color);
@@ -699,7 +700,7 @@
     <main>
         <section class="header">
             <h1>Clair Wang</h1>
-            <p>High school sophomore from Boston, MA, passionate about math, computer science, physics, and music.</p>
+            <p>Hello! I am a High school sophomore from Boston, MA, passionate about math, computer science, physics, and music.</p>
 
             <div class="bubble-container">
 
@@ -724,7 +725,6 @@
                     data-description="I love to spend my free time coding personal projects and learning new languages!">
                     <img src="bubbles/coding.png" alt="Coding" />
                 </div>
-
             </div>
         </section>
 
@@ -792,7 +792,6 @@
             <p id="popupDescription"></p>
         </div>
     </div>
-
 
     <script>
         const projectsContainer = document.getElementById('projects-container');
@@ -863,7 +862,6 @@
                 hidePopup();
             }
         });
-
     </script>
 </body>
 </html>
