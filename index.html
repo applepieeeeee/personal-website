@@ -781,6 +781,45 @@
 
         window.addEventListener('load', updateScrollButtons);
         window.addEventListener('resize', updateScrollButtons); 
+
+
+        const popupModal = document.getElementById('popupModal');
+        const closeButton = document.querySelector('.close-button');
+        const popupImage = document.getElementById('popupImage');
+        const popupTitle = document.getElementById('popupTitle');
+        const popupDescription = document.getElementById('popupDescription');
+        const hobbyBubbles = document.querySelectorAll('.bubble');
+
+        const showPopup = (imageSrc, title, description) => {
+            popupImage.src = imageSrc;
+            popupTitle.textContent = title;
+            popupDescription.textContent = description;
+            popupModal.classList.add('show'); 
+        };
+
+        hobbyBubbles.forEach(bubble => {
+            bubble.addEventListener('click', (event) => {
+                const image = bubble.getAttribute('data-image');
+                const title = bubble.getAttribute('data-title');
+                const description = bubble.getAttribute('data-description');
+                showPopup(image, title, description);
+            });
+        });
+
+        closeButton.addEventListener('click', hidePopup);
+
+         popupModal.addEventListener('click', (event) => {
+            if (event.target === popupModal) {
+                hidePopup();
+            }
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && popupModal.classList.contains('show')) {
+                hidePopup();
+            }
+        });
+
     </script>
 </body>
 </html>
